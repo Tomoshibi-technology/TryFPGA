@@ -1,0 +1,58 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Wed May  7 09:08:00 2025
+[*]
+[dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/uart/dump.vcd"
+[dumpfile_mtime] "Wed May  7 09:07:12 2025"
+[dumpfile_size] 1206
+[savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/uart/uart.sav"
+[timestart] 9
+[size] 1336 600
+[pos] 242 585
+*-4.794681 135 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[sst_width] 255
+[signals_width] 128
+[sst_expanded] 1
+[sst_vpaned_height] 159
+@200
+-tx
+@28
+tb_uart.rst
+tb_uart.start
+@29
+tb_uart.data_in[7:0]
+@28
+tb_uart.clk
+@200
+-
+@28
+tb_uart.tx
+tb_uart.busy
+[pattern_trace] 1
+[pattern_trace] 0
