@@ -18,7 +18,7 @@ reg [7:0] shift_reg;
 
 
 always @(posedge clk or posedge rst) begin
-  busy = (state != IDLE);
+  busy <= (state != IDLE);
   if(rst) begin
     state <= IDLE;
     tx <= 1'b1;
@@ -26,7 +26,7 @@ always @(posedge clk or posedge rst) begin
   end else begin
     case(state)
       IDLE: begin
-        if(start) begin // 1bit遅れてスタート
+        if(start) begin // 1bit delay
           state <= START;
           bit_count <= 4'b0000;
           shift_reg <= data_in;
@@ -38,16 +38,19 @@ always @(posedge clk or posedge rst) begin
       end
       DATA: begin
         tx <= shift_reg[0]; // Transmit LSB first
-        shift_reg <= {1'b0, shift_reg[7:1]}; // Shift left
+        shift_reg <= {1'b0, shift_reg[7:1]}; // Shift
         if(bit_count == 4'b0111) begin
           state <= STOP;
         end else begin
-          bit_count <= bit_count + 1;
+          bit_count <= bit_count + 4'b0001;
         end
       end
       STOP: begin
         tx <= 1'b1; // Stop bit
         state <= IDLE;
+      end
+      default: begin
+        state <= IDLE; // Fallback to IDLE state
       end
     endcase
   end

@@ -30,11 +30,11 @@ module tb_uart;
     start = 0;
     data_in = 8'b00000011;
 
-    #10 rst = 0; // Release reset after some time
+    #10 rst = 0;
     #5 start = 1; // Start transmission
     #5 start = 0; // Clear start signal
 
-    #100; // Wait for transmission to complete
+    #100;
 
     $finish;
   end
