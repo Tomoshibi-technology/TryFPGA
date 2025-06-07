@@ -17,7 +17,7 @@ reg [3:0] bit_count;
 reg [7:0] shift_reg;
 
 
-always @(posedge clk or posedge rst) begin
+always @(posedge clk) begin
   busy <= (state != IDLE);
   if(rst) begin
     state <= IDLE;

@@ -6,7 +6,7 @@ module tb_uart;
   wire tx;
   wire busy;
 
-  uart_tx uut (
+  uart_tx uart (
     .clk(clk),
     .rst(rst),
     .start(start),
