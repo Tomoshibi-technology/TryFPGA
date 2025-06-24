@@ -1,0 +1,68 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Tue Jun 24 18:45:08 2025
+[*]
+[dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/sample-project/tmp/wave.vcd"
+[dumpfile_mtime] "Tue Jun 24 18:44:32 2025"
+[dumpfile_size] 109617
+[savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/sample-project/sim/waveformat.sav"
+[timestart] 98253000
+[size] 1336 663
+[pos] 33 1281
+*-18.000000 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_top.
+[treeopen] tb_top.dut.
+[sst_width] 255
+[signals_width] 120
+[sst_expanded] 1
+[sst_vpaned_height] 179
+@28
+tb_top.clk27m
+tb_top.led_out
+tb_top.rst_n
+@200
+-
+@420
+tb_top.dut.BLINK_HZ
+tb_top.dut.CLK_FREQ_HZ
+tb_top.dut.CNT_MAX
+@28
+tb_top.dut.clk27m
+tb_top.dut.led_out
+tb_top.dut.rst_n
+@200
+-
+@420
+tb_top.dut.u_blinker.CNT_MAX
+@28
+tb_top.dut.u_blinker.clk
+tb_top.dut.u_blinker.q_out
+tb_top.dut.u_blinker.rst_n
+[pattern_trace] 1
+[pattern_trace] 0

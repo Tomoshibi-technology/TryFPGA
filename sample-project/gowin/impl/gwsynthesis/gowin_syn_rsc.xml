@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" T_Register="25(0)" T_Alu="23(0)" T_Lut="11(0)">
+ <SubModule name="u_blinker" Register="25" Alu="23" Lut="11" T_Register="25(25)" T_Alu="23(23)" T_Lut="11(11)"/>
+</Module>
