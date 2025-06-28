@@ -1,0 +1,78 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sat Jun 28 17:02:00 2025
+[*]
+[dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/tmp/wave.vcd"
+[dumpfile_mtime] "Sat Jun 28 17:00:09 2025"
+[dumpfile_size] 1586
+[savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/sim/waveformat.sav"
+[timestart] 0
+[size] 1336 600
+[pos] 210 245
+*-17.000000 104800 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_top.
+[treeopen] tb_top.dut.
+[sst_width] 255
+[signals_width] 169
+[sst_expanded] 1
+[sst_vpaned_height] 159
+@28
+tb_top.dut.clk27m
+tb_top.dut.cs
+tb_top.dut.data_valid
+tb_top.dut.miso
+tb_top.dut.mosi
+tb_top.dut.rst_n
+@22
+tb_top.dut.rx_data[7:0]
+@28
+tb_top.dut.sclk
+@200
+-
+@28
+tb_top.dut.my_spi.bit_cnt[2:0]
+tb_top.dut.my_spi.cs
+tb_top.dut.my_spi.data_valid
+tb_top.dut.my_spi.miso
+tb_top.dut.my_spi.mosi
+tb_top.dut.my_spi.rst_n
+@22
+tb_top.dut.my_spi.rx_data[7:0]
+@29
+tb_top.dut.my_spi.rx_shift_reg[7:0]
+@28
+tb_top.dut.my_spi.sclk
+@420
+tb_top.dut.my_spi.tmp
+@22
+tb_top.dut.my_spi.tx_data[7:0]
+@28
+tb_top.dut.my_spi.tx_start
+[pattern_trace] 1
+[pattern_trace] 0
