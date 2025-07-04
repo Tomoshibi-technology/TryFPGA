@@ -13,12 +13,10 @@ module top (
     wire data_valid;
     wire [7:0] rx_data;
 
-    spi_slave #(
-        .tmp(10) // パラメータ tmp を 10 に設定
-    )my_spi(
+    spi_slave my_spi(
       .rst_n(rst_n),
-      .tx_data(),
-      .tx_start(),
+      // .tx_data(),
+      // .tx_start(),
 
       .rx_data(rx_data[7:0]),
       .data_valid(data_valid),

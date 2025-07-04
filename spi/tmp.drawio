@@ -1,0 +1,13 @@
+<mxfile host="65bd71144e" pages="2">
+    <diagram name="システム構成図" id="zc61dTZKQmQg_mWVGY-J">
+        <mxGraphModel dx="718" dy="682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+            <root>
+                <mxCell id="Z7D79hy8JtXt1SOjoYIY-0"/>
+                <mxCell id="Z7D79hy8JtXt1SOjoYIY-1" parent="Z7D79hy8JtXt1SOjoYIY-0"/>
+                <mxCell id="W7RT8O60GpWif0dgqvUV-0" value="spi_slave" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Z7D79hy8JtXt1SOjoYIY-1">
+                    <mxGeometry x="510" y="40" width="120" height="140" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

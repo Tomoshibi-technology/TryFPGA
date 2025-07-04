@@ -48,7 +48,7 @@ module tb_top;
 
         cs = 0;
         #20;
-        // SPI受信テスト (0xB5 = 10110101)
+
         test_data = 8'hB5;
         // for文を使って8ビット送信 (MSBファースト)
         for (i = 7; i >= 0; i = i - 1) begin

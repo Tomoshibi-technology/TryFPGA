@@ -1,7 +1,5 @@
 // spi.v -  汎用spi slave モジュール
-module spi_slave #(
-  parameter tmp = 10
-)(
+module spi_slave(
     input  wire rst_n,
     input wire [7:0] tx_data,
     input wire tx_start,
@@ -27,6 +25,7 @@ always @(posedge sclk) begin
     data_valid <= 1'b0;
   end else if (!cs) begin // Active low chip select
     if(bit_cnt == 3'd7) begin
+      rx_shift_reg[7:0] <= 8'b0;
       rx_data[7:0] <= {rx_shift_reg[6:0], mosi};
       data_valid <= 1'b1;
     end else begin
@@ -34,13 +33,8 @@ always @(posedge sclk) begin
       data_valid <= 1'b0; 
       // TODO: SPIのクロックが止まってしまうと、0に戻せなくなるので、何かしらの対策が必要
     end
-    bit_cnt <= bit_cnt + 1; // 非ブロッキング代入
+    bit_cnt <= bit_cnt + 1; // non-blocking assignment
   end
 end
-
-// Raceive
-// always @(negedge sclk){
-//   miso <= 
-// }
 
 endmodule
