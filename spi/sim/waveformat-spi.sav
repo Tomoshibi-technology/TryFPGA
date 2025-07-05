@@ -1,0 +1,50 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Mon Jun 30 04:45:58 2025
+[*]
+[dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/tmp/wave.vcd"
+[dumpfile_mtime] "Mon Jun 30 04:44:19 2025"
+[dumpfile_size] 1945
+[savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/sim/waveformat.sav"
+[timestart] 146800
+[size] 1336 600
+[pos] 239 247
+*-17.000000 416800 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[treeopen] tb_top.
+[treeopen] tb_top.dut.
+[sst_width] 255
+[signals_width] 169
+[sst_expanded] 1
+[sst_vpaned_height] 159
+@28
+tb_top.clk27m
+tb_top.cs
+@420
+tb_top.i
+@28
+tb_top.miso
+tb_top.mosi
+tb_top.rst_n
+tb_top.sclk
+@22
+tb_top.test_data[7:0]
+@200
+-
+@28
+tb_top.dut.my_spi.bit_cnt[2:0]
+tb_top.dut.my_spi.cs
+tb_top.dut.my_spi.data_valid
+tb_top.dut.my_spi.miso
+tb_top.dut.my_spi.mosi
+tb_top.dut.my_spi.rst_n
+@22
+tb_top.dut.my_spi.rx_data[7:0]
+tb_top.dut.my_spi.rx_shift_reg[7:0]
+@28
+tb_top.dut.my_spi.sclk
+@22
+tb_top.dut.my_spi.tx_data[7:0]
+@28
+tb_top.dut.my_spi.tx_start
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,50 +1,87 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Mon Jun 30 04:45:58 2025
+[*] Sat Jul  5 18:42:07 2025
 [*]
 [dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/tmp/wave.vcd"
-[dumpfile_mtime] "Mon Jun 30 04:44:19 2025"
-[dumpfile_size] 1945
+[dumpfile_mtime] "Sat Jul  5 18:41:08 2025"
+[dumpfile_size] 5280
 [savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/sim/waveformat.sav"
-[timestart] 146800
-[size] 1336 600
-[pos] 239 247
-*-17.000000 416800 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[timestart] 782000
+[size] 1520 719
+[pos] 0 1293
+*-18.000000 1987000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
 [treeopen] tb_top.
 [treeopen] tb_top.dut.
 [sst_width] 255
-[signals_width] 169
+[signals_width] 206
 [sst_expanded] 1
-[sst_vpaned_height] 159
+[sst_vpaned_height] 209
 @28
-tb_top.clk27m
-tb_top.cs
-@420
-tb_top.i
+tb_top.dut.clk50m
+tb_top.dut.cs
+tb_top.dut.data_valid
+@c00023
+tb_top.dut.rx_data[7:0]
+@29
+(0)tb_top.dut.rx_data[7:0]
+(1)tb_top.dut.rx_data[7:0]
+(2)tb_top.dut.rx_data[7:0]
+(3)tb_top.dut.rx_data[7:0]
+(4)tb_top.dut.rx_data[7:0]
+(5)tb_top.dut.rx_data[7:0]
+(6)tb_top.dut.rx_data[7:0]
+(7)tb_top.dut.rx_data[7:0]
+@1401201
+-group_end
 @28
-tb_top.miso
-tb_top.mosi
-tb_top.rst_n
-tb_top.sclk
-@22
-tb_top.test_data[7:0]
+tb_top.dut.miso
+tb_top.dut.mosi
+tb_top.dut.rst_n
+tb_top.dut.sclk
 @200
 -
 @28
-tb_top.dut.my_spi.bit_cnt[2:0]
-tb_top.dut.my_spi.cs
-tb_top.dut.my_spi.data_valid
-tb_top.dut.my_spi.miso
-tb_top.dut.my_spi.mosi
-tb_top.dut.my_spi.rst_n
+tb_top.dut.my_spi_syn.rst_n
+tb_top.dut.my_spi_syn.clk
+tb_top.dut.my_spi_syn.cs
+tb_top.dut.my_spi_syn.mosi
+tb_top.dut.my_spi_syn.sclk
+tb_top.dut.my_spi_syn.buf_cs[2:0]
+tb_top.dut.my_spi_syn.buf_mosi[2:0]
+tb_top.dut.my_spi_syn.buf_sclk[2:0]
+tb_top.dut.my_spi_syn.bit_cnt[2:0]
+tb_top.dut.my_spi_syn.cs_rise
+tb_top.dut.my_spi_syn.sclk_rise
 @22
-tb_top.dut.my_spi.rx_data[7:0]
-tb_top.dut.my_spi.rx_shift_reg[7:0]
+tb_top.dut.my_spi_syn.rx_data[7:0]
+tb_top.dut.my_spi_syn.rx_shift_reg[7:0]
 @28
-tb_top.dut.my_spi.sclk
-@22
-tb_top.dut.my_spi.tx_data[7:0]
-@28
-tb_top.dut.my_spi.tx_start
+tb_top.dut.my_spi_syn.data_valid
 [pattern_trace] 1
 [pattern_trace] 0
