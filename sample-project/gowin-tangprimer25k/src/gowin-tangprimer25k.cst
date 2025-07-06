@@ -1,0 +1,13 @@
+//Copyright (C)2014-2025 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//Tool Version: V1.9.11.01 Education
+//Part Number: GW5A-LV25MG121NC1/I0
+//Device: GW5A-25
+//Device Version: A
+//Created Time: Mon 07 07 01:04:40 2025
+
+IO_LOC "led_out" J11;
+IO_PORT "led_out" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "clk27m" E2;
+IO_PORT "clk27m" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
