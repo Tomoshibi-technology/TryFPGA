@@ -42,9 +42,9 @@ module tb_top;
         sclk = 1;
         cs = 1;
         mosi = 0;
-        rst_n = 1;
-        #100;
         rst_n = 0;
+        #100;
+        rst_n = 1;
         #100;
 
         cs = 0;
