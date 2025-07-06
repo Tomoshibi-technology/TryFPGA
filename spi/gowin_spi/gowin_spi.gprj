@@ -1,0 +1,13 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5A-25A" pn="GW5A-LV25MG121NC1/I0">gw5a25a-002</Device>
+    <FileList>
+        <File path="/Users/jumpei/Documents/GitHub/TryFPGA/spi/src/spi_syn.v" type="file.verilog" enable="1"/>
+        <File path="/Users/jumpei/Documents/GitHub/TryFPGA/spi/src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_spi.cst" type="file.cst" enable="1"/>
+        <File path="src/gowin_spi.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>
