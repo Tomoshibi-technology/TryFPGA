@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Sun Jul  6 01:21:40 2025
+[*] Sun Jul  6 16:21:02 2025
 [*]
 [dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/tmp/wave.vcd"
-[dumpfile_mtime] "Sat Jul  5 18:45:31 2025"
-[dumpfile_size] 5280
+[dumpfile_mtime] "Sun Jul  6 16:20:42 2025"
+[dumpfile_size] 4315
 [savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/sim/waveformat.sav"
 [timestart] 0
 [size] 1520 719
 [pos] 211 1311
-*-18.000000 377000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-18.000000 507000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [markername] AA
 [markername] BB
 [markername] CC
@@ -60,7 +60,6 @@ tb_top.dut.rx_data[7:0]
 @1401200
 -group_end
 @28
-tb_top.dut.miso
 tb_top.dut.mosi
 tb_top.dut.rst_n
 tb_top.dut.sclk

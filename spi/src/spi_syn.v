@@ -11,16 +11,16 @@ module spi_syn_slave(
     input wire clk,
     input  wire rst_n,
 
-    input wire [7:0] tx_data,
-    input wire tx_start,
+    // input wire [7:0] tx_data,
+    // input wire tx_start,
     
     output reg [7:0] rx_data,
     output wire data_valid,
 
     input  wire sclk,
     input  wire cs,
-    input  wire mosi,
-    output reg  miso
+    input  wire mosi
+    // output reg  miso
 );
 
 reg[2:0] buf_sclk, buf_cs, buf_mosi;

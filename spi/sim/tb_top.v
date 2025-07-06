@@ -28,8 +28,8 @@ module tb_top;
         .rst_n  (rst_n),
         .sclk   (sclk),
         .cs     (cs),
-        .mosi   (mosi),
-        .miso   (miso)
+        .mosi   (mosi)
+        // .miso   (miso)
     );
 
     // シミュレーション制御
@@ -42,9 +42,9 @@ module tb_top;
         sclk = 1;
         cs = 1;
         mosi = 0;
-        rst_n = 0;
-        #100;
         rst_n = 1;
+        #100;
+        rst_n = 0;
         #100;
 
         cs = 0;

@@ -7,16 +7,33 @@ module top (
     input wire sclk,
     input wire cs,
     input wire mosi,
-    output wire miso,
+    // output wire miso,
 
-    output wire [7:0] led // For debugging, to see received data
+    output wire [8:0] led,
+    output wire o_sclk,
+    output wire o_cs,
+    output wire o_mosi
 ); 
 
     wire data_valid;
     wire [7:0] rx_data;
 
-    assign miso = 1'b0;
-    assign led = rx_data; // Debug
+    assign led[7:0] = rx_data[7:0]; // Display received data on LEDs
+    assign led[8] = data_valid; // Indicate data valid status on the last LED
+
+    assign o_sclk = sclk;
+    assign o_cs = cs;
+    assign o_mosi = mosi;
+
+    // reg[$clog2(500)-1:0] clk_div;
+    // always @(posedge clk50m) begin
+    //     if (!rst_n) begin
+    //         clk_div <= 0;
+    //     end else begin
+    //         clk_div <= clk_div + 1;
+    //     end
+    // end
+    // assign led[0] = clk_div[$clog2(500)-1];
 
     spi_syn_slave my_spi_syn(
         .clk(clk50m),
@@ -27,8 +44,7 @@ module top (
 
         .sclk(sclk),
         .cs(cs),
-        .mosi(mosi),
-        .miso(miso)
+        .mosi(mosi)
     );
 
     // spi_slave my_spi(
