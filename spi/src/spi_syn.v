@@ -42,8 +42,6 @@ wire cs_rise;
 assign sclk_rise = ((buf_sclk[2]==1'b0)&&(buf_sclk[1]==1'b1))?1'b1:1'b0;
 assign cs_rise = ((buf_cs[2]==1'b0)&&(buf_cs[1]==1'b1))?1'b1:1'b0;
 
-
-
 reg [7:0] rx_shift_reg;
 reg [2:0] bit_cnt;
 

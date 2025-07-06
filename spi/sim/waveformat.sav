@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Sat Jul  5 18:42:07 2025
+[*] Sun Jul  6 01:21:40 2025
 [*]
 [dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/tmp/wave.vcd"
-[dumpfile_mtime] "Sat Jul  5 18:41:08 2025"
+[dumpfile_mtime] "Sat Jul  5 18:45:31 2025"
 [dumpfile_size] 5280
 [savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi/sim/waveformat.sav"
-[timestart] 782000
+[timestart] 0
 [size] 1520 719
-[pos] 0 1293
-*-18.000000 1987000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[pos] 211 1311
+*-18.000000 377000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [markername] AA
 [markername] BB
 [markername] CC
@@ -46,9 +46,9 @@
 tb_top.dut.clk50m
 tb_top.dut.cs
 tb_top.dut.data_valid
-@c00023
+@c00022
 tb_top.dut.rx_data[7:0]
-@29
+@28
 (0)tb_top.dut.rx_data[7:0]
 (1)tb_top.dut.rx_data[7:0]
 (2)tb_top.dut.rx_data[7:0]
@@ -57,7 +57,7 @@ tb_top.dut.rx_data[7:0]
 (5)tb_top.dut.rx_data[7:0]
 (6)tb_top.dut.rx_data[7:0]
 (7)tb_top.dut.rx_data[7:0]
-@1401201
+@1401200
 -group_end
 @28
 tb_top.dut.miso
@@ -81,6 +81,8 @@ tb_top.dut.my_spi_syn.sclk_rise
 @22
 tb_top.dut.my_spi_syn.rx_data[7:0]
 tb_top.dut.my_spi_syn.rx_shift_reg[7:0]
+@29
+tb_top.dut.my_spi_syn.buf_data_valid[1:0]
 @28
 tb_top.dut.my_spi_syn.data_valid
 [pattern_trace] 1

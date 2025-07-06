@@ -7,11 +7,16 @@ module top (
     input wire sclk,
     input wire cs,
     input wire mosi,
-    output wire miso
+    output wire miso,
+
+    output wire [7:0] led // For debugging, to see received data
 ); 
 
     wire data_valid;
     wire [7:0] rx_data;
+
+    assign miso = 1'b0;
+    assign led = rx_data; // Debug
 
     spi_syn_slave my_spi_syn(
         .clk(clk50m),
