@@ -60,7 +60,7 @@ always@(posedge clk) begin
         bit_cnt <= 3'b0;
         rx_data <= {rx_shift_reg[6:0], buf_mosi[2]};
       end else begin
-        bit_cnt <= bit_cnt + 1;
+        bit_cnt <= (bit_cnt + 1) & 3'b111;
         rx_shift_reg <= {rx_shift_reg[6:0], buf_mosi[2]};
       end
     end else if(cs_rise) begin
