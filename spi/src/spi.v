@@ -3,7 +3,7 @@ module spi_slave(
     input  wire rst_n,
     input wire [7:0] tx_data,
     input wire tx_start,
-    
+
     output reg [7:0] rx_data,
     output reg data_valid,
 

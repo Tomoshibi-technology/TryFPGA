@@ -13,7 +13,7 @@ module top (
     //----------------------------------------------------------
     localparam CLK_FREQ_HZ = 27_000_000;   // 27 MHz
     localparam BLINK_HZ    = 1;            // 1 Hz で点滅
-    localparam CNT_MAX     = CLK_FREQ_HZ / (2*BLINK_HZ) - 1; // 1 Hz 点滅のためのカウンタ最大値
+    localparam CNT_MAX     = 10; //CLK_FREQ_HZ / (2*BLINK_HZ) - 1; // 1 Hz 点滅のためのカウンタ最大値
 
     //----------------------------------------------------------
     // インスタンス：1 bit トグル FF
