@@ -1,0 +1,87 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Sat Jul 12 08:43:48 2025
+[*]
+[dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-neopixel/tmp/wave.vcd"
+[dumpfile_mtime] "Sat Jul 12 08:37:31 2025"
+[dumpfile_size] 5503
+[savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-neopixel/sim/waveformat.sav"
+[timestart] 782000
+[size] 1520 719
+[pos] 62 445
+*-18.000000 1114500 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_top.
+[treeopen] tb_top.dut.
+[sst_width] 255
+[signals_width] 206
+[sst_expanded] 1
+[sst_vpaned_height] 209
+@28
+tb_top.dut.i_clk50m
+tb_top.dut.i_cs
+tb_top.dut.i_mosi
+tb_top.dut.i_rst_n
+tb_top.dut.i_sclk
+tb_top.dut.o_cs
+@c00022
+tb_top.dut.o_led[8:0]
+@28
+(0)tb_top.dut.o_led[8:0]
+(1)tb_top.dut.o_led[8:0]
+(2)tb_top.dut.o_led[8:0]
+(3)tb_top.dut.o_led[8:0]
+(4)tb_top.dut.o_led[8:0]
+(5)tb_top.dut.o_led[8:0]
+(6)tb_top.dut.o_led[8:0]
+(7)tb_top.dut.o_led[8:0]
+(8)tb_top.dut.o_led[8:0]
+@1401200
+-group_end
+@28
+tb_top.dut.o_mosi
+tb_top.dut.o_sclk
+@29
+tb_top.dut.w_data_valid
+@22
+tb_top.dut.w_rx_data[7:0]
+@200
+-
+@28
+tb_top.dut.my_spi.r_bit_cnt[2:0]
+tb_top.dut.my_spi.r_buf_cs[2:0]
+tb_top.dut.my_spi.r_buf_data_valid[1:0]
+tb_top.dut.my_spi.r_buf_mosi[2:0]
+tb_top.dut.my_spi.r_buf_sclk[2:0]
+@22
+tb_top.dut.my_spi.r_rx_shift_reg[7:0]
+@28
+tb_top.dut.my_spi.w_cs_rise
+tb_top.dut.my_spi.w_sclk_rise
+[pattern_trace] 1
+[pattern_trace] 0
