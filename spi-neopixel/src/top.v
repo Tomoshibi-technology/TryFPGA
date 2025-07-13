@@ -25,16 +25,6 @@ module top (
     assign o_cs = i_cs;
     assign o_mosi = i_mosi;
 
-    // reg[$clog2(500)-1:0] r_clk_div;
-    // always @(posedge i_clk50m) begin
-    //     if (!i_rst_n) begin
-    //         r_clk_div <= 0;
-    //     end else begin
-    //         r_clk_div <= r_clk_div + 1;
-    //     end
-    // end
-    // assign o_led[0] = r_clk_div[$clog2(500)-1];
-
     spi_slave my_spi(
         .i_clk(i_clk50m),
         .i_rst_n(i_rst_n),
@@ -46,5 +36,15 @@ module top (
         .i_cs(i_cs),
         .i_mosi(i_mosi)
     );
+
+        // reg[$clog2(500)-1:0] r_clk_div;
+    // always @(posedge i_clk50m) begin
+    //     if (!i_rst_n) begin
+    //         r_clk_div <= 0;
+    //     end else begin
+    //         r_clk_div <= r_clk_div + 1;
+    //     end
+    // end
+    // assign o_led[0] = r_clk_div[$clog2(500)-1];
 
 endmodule
