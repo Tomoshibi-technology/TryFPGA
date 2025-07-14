@@ -60,7 +60,7 @@ module tb_neopixel;
         for (integer i = 0; i < LEDS; i = i + 1) begin
             case (i % 3)
                 0: begin // Red LED
-                    test_mem[i*3 + 0] = 8'hFF; // R
+                    test_mem[i*3 + 0] = 8'h55; // R
                     test_mem[i*3 + 1] = i; // G
                     test_mem[i*3 + 2] = 8'h00; // B
                 end

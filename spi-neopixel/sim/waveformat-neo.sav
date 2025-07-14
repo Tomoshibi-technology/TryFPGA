@@ -1,28 +1,123 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Mon Jul 14 16:28:33 2025
+[*] Mon Jul 14 16:57:08 2025
 [*]
 [dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-neopixel/tmp/neopixel.vcd"
-[dumpfile_mtime] "Mon Jul 14 16:26:22 2025"
-[dumpfile_size] 2001973
+[dumpfile_mtime] "Mon Jul 14 16:53:56 2025"
+[dumpfile_size] 1699157
 [savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-neopixel/sim/waveformat-neo.sav"
-[timestart] 786760000
-[size] 1336 600
-[pos] -1 45
-*-24.000000 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[timestart] 0
+[size] 1736 600
+[pos] 0 45
+*-19.000000 930000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
 [treeopen] tb_neopixel.
 [sst_width] 255
-[signals_width] 152
+[signals_width] 208
 [sst_expanded] 1
 [sst_vpaned_height] 159
 @420
 tb_neopixel.dut.CLK_HZ
 tb_neopixel.dut.LEDS
+@23
 tb_neopixel.dut.RST_TCK
 tb_neopixel.dut.T0H_TCK
 tb_neopixel.dut.T0L_TCK
 tb_neopixel.dut.T1H_TCK
+@c00023
 tb_neopixel.dut.T1L_TCK
+@28
+(0)tb_neopixel.dut.T1L_TCK
+(1)tb_neopixel.dut.T1L_TCK
+(2)tb_neopixel.dut.T1L_TCK
+(3)tb_neopixel.dut.T1L_TCK
+(4)tb_neopixel.dut.T1L_TCK
+(5)tb_neopixel.dut.T1L_TCK
+(6)tb_neopixel.dut.T1L_TCK
+(7)tb_neopixel.dut.T1L_TCK
+(8)tb_neopixel.dut.T1L_TCK
+(9)tb_neopixel.dut.T1L_TCK
+(10)tb_neopixel.dut.T1L_TCK
+(11)tb_neopixel.dut.T1L_TCK
+(12)tb_neopixel.dut.T1L_TCK
+(13)tb_neopixel.dut.T1L_TCK
+(14)tb_neopixel.dut.T1L_TCK
+(15)tb_neopixel.dut.T1L_TCK
+(16)tb_neopixel.dut.T1L_TCK
+(17)tb_neopixel.dut.T1L_TCK
+(18)tb_neopixel.dut.T1L_TCK
+(19)tb_neopixel.dut.T1L_TCK
+(20)tb_neopixel.dut.T1L_TCK
+(21)tb_neopixel.dut.T1L_TCK
+(22)tb_neopixel.dut.T1L_TCK
+(23)tb_neopixel.dut.T1L_TCK
+(24)tb_neopixel.dut.T1L_TCK
+(25)tb_neopixel.dut.T1L_TCK
+(26)tb_neopixel.dut.T1L_TCK
+(27)tb_neopixel.dut.T1L_TCK
+(28)tb_neopixel.dut.T1L_TCK
+(29)tb_neopixel.dut.T1L_TCK
+(30)tb_neopixel.dut.T1L_TCK
+(31)tb_neopixel.dut.T1L_TCK
+(32)tb_neopixel.dut.T1L_TCK
+(33)tb_neopixel.dut.T1L_TCK
+(34)tb_neopixel.dut.T1L_TCK
+(35)tb_neopixel.dut.T1L_TCK
+(36)tb_neopixel.dut.T1L_TCK
+(37)tb_neopixel.dut.T1L_TCK
+(38)tb_neopixel.dut.T1L_TCK
+(39)tb_neopixel.dut.T1L_TCK
+(40)tb_neopixel.dut.T1L_TCK
+(41)tb_neopixel.dut.T1L_TCK
+(42)tb_neopixel.dut.T1L_TCK
+(43)tb_neopixel.dut.T1L_TCK
+(44)tb_neopixel.dut.T1L_TCK
+(45)tb_neopixel.dut.T1L_TCK
+(46)tb_neopixel.dut.T1L_TCK
+(47)tb_neopixel.dut.T1L_TCK
+(48)tb_neopixel.dut.T1L_TCK
+(49)tb_neopixel.dut.T1L_TCK
+(50)tb_neopixel.dut.T1L_TCK
+(51)tb_neopixel.dut.T1L_TCK
+(52)tb_neopixel.dut.T1L_TCK
+(53)tb_neopixel.dut.T1L_TCK
+(54)tb_neopixel.dut.T1L_TCK
+(55)tb_neopixel.dut.T1L_TCK
+(56)tb_neopixel.dut.T1L_TCK
+(57)tb_neopixel.dut.T1L_TCK
+(58)tb_neopixel.dut.T1L_TCK
+(59)tb_neopixel.dut.T1L_TCK
+(60)tb_neopixel.dut.T1L_TCK
+(61)tb_neopixel.dut.T1L_TCK
+(62)tb_neopixel.dut.T1L_TCK
+(63)tb_neopixel.dut.T1L_TCK
+@1401203
+-group_end
 @28
 tb_neopixel.dut.i_clk
 @22
