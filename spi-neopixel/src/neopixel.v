@@ -2,17 +2,17 @@ module neopixel_driver #(
   parameter LEDS = 200,
   parameter CLK_HZ = 50_000_000
 )(
-    input wire i_clk,
-    input wire i_rst_n,
+  input wire i_clk,
+  input wire i_rst_n,
 
-    input wire i_start,
-    output reg o_busy,
+  input wire i_start,
+  output reg o_busy, //========
 
-    output wire [$clog2(LEDS*3)-1:0] o_rd_addr, // 0x0000 to 0x
-    input wire [7:0] i_data,
+  output wire [$clog2(LEDS*3)-1:0] o_rd_addr, // 0x0000 to 0x
+  input wire [7:0] i_data,
 
-    output reg o_neopixel_out,
-    output reg o_frame_done
+  output reg o_neopixel_out, //========
+  output reg o_frame_done //========
 );
 
 localparam T0H_TCK = CLK_HZ * 350 / 1_000_000_000; // 350ns
@@ -22,11 +22,11 @@ localparam T1L_TCK = CLK_HZ * 600 / 1_000_000_000; // 600ns
 localparam RST_TCK = CLK_HZ * 50_000 / 1_000_000; // 50us
 
 typedef enum logic [2:0] {
-    IDLE,
-    LOAD,
-    HI,
-    LO,
-    RST
+  IDLE,
+  LOAD,
+  HI,
+  LO,
+  RST
 } state_t;
 
 state_t r_state = IDLE;
@@ -50,6 +50,7 @@ always @(posedge i_clk)begin
     case (r_state)
       IDLE: begin
         o_neopixel_out <= 1'b0;
+        
         if(i_start) begin
           o_busy <= 1'b1;
           r_state <= LOAD;
@@ -57,12 +58,12 @@ always @(posedge i_clk)begin
         end
       end
       LOAD: begin
+        o_neopixel_out <= 1'b1;
         r_shift <= i_data;
         r_bit_cnt <= 3'd7;
         r_state <= HI;
 
         r_clk_cnt <= (i_data[7]) ? T1H_TCK - 1 : T0H_TCK - 1;
-        o_neopixel_out <= 1'b1;
       end
       HI: begin
         if(r_clk_cnt == 0) begin

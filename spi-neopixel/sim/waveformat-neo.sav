@@ -1,0 +1,47 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Mon Jul 14 16:28:33 2025
+[*]
+[dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-neopixel/tmp/neopixel.vcd"
+[dumpfile_mtime] "Mon Jul 14 16:26:22 2025"
+[dumpfile_size] 2001973
+[savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-neopixel/sim/waveformat-neo.sav"
+[timestart] 786760000
+[size] 1336 600
+[pos] -1 45
+*-24.000000 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[treeopen] tb_neopixel.
+[sst_width] 255
+[signals_width] 152
+[sst_expanded] 1
+[sst_vpaned_height] 159
+@420
+tb_neopixel.dut.CLK_HZ
+tb_neopixel.dut.LEDS
+tb_neopixel.dut.RST_TCK
+tb_neopixel.dut.T0H_TCK
+tb_neopixel.dut.T0L_TCK
+tb_neopixel.dut.T1H_TCK
+tb_neopixel.dut.T1L_TCK
+@28
+tb_neopixel.dut.i_clk
+@22
+tb_neopixel.dut.i_data[7:0]
+@28
+tb_neopixel.dut.i_rst_n
+tb_neopixel.dut.i_start
+tb_neopixel.dut.o_busy
+tb_neopixel.dut.o_frame_done
+tb_neopixel.dut.o_neopixel_out
+@22
+tb_neopixel.dut.o_rd_addr[6:0]
+@28
+tb_neopixel.dut.r_bit_cnt[2:0]
+@22
+tb_neopixel.dut.r_byte_cnt[6:0]
+tb_neopixel.dut.r_clk_cnt[15:0]
+tb_neopixel.dut.r_shift[7:0]
+@28
+tb_neopixel.dut.r_state[2:0]
+[pattern_trace] 1
+[pattern_trace] 0
