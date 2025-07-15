@@ -1,4 +1,17 @@
 /*
+各入出力について
+  i_clk: クロック
+  i_rst_n: リセット (アクティブLOW)
+
+  i_wr_en: 書き込み有効信号
+    clk立ち上がり時に1ならば、i_wr_addrとi_wr_dataを使って書き込み
+  i_wr_addr: 書き込みアドレス
+  i_wr_data: 書き込みデータ
+  i_write_frame_done: 1フレーム書き込み完了信号 = スワップする
+
+  i_rd_addr: 読み出しアドレス
+  o_rd_data: 読み出しデータ
+  o_read_frame_valid: 読み出しフレーム有効信号 = スワップ後に1クロック分1になる。
 */
 
 module double_buffer #(
