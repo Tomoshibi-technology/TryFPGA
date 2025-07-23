@@ -34,15 +34,25 @@ module neopixel_driver #(
   input wire [7:0] i_data,
 
   output reg o_neopixel_out,
-  output reg o_frame_done
+  output reg o_frame_done,
+
+  output wire[7:0] o_debug_state
 );
 
-localparam T0H_TCK = CLK_HZ * 350 / 1_000_000_000; // 350ns
-localparam T0L_TCK = CLK_HZ * 800 / 1_000_000_000; // 800ns
-localparam T1H_TCK = CLK_HZ * 700 / 1_000_000_000; // 700ns
-localparam T1L_TCK = CLK_HZ * 600 / 1_000_000_000; // 600ns
-// localparam RST_TCK = CLK_HZ * 50_000 / 1_000_000; // 50us
-localparam RST_TCK = CLK_HZ * 50 / 1_000_000; // 50us
+assign o_debug_state = r_clk_cnt[15:8]; // デバッグ用にクロックカウンタを出力
+
+// localparam T0H_TCK = (CLK_HZ * 350 + 500_000_000) / 1_000_000_000; // 350ns
+// localparam T0L_TCK = (CLK_HZ * 800 + 500_000_000) / 1_000_000_000; // 800ns  
+// localparam T1H_TCK = (CLK_HZ * 700 + 500_000_000) / 1_000_000_000; // 700ns
+// localparam T1L_TCK = (CLK_HZ * 600 + 500_000_000) / 1_000_000_000; // 600ns
+// localparam RST_TCK = (CLK_HZ * 50 + 500_000) / 1_000_000; // 50us
+
+// 50MHz (20ns/clock) での計算済み値
+localparam T0H_TCK = 18;  // 350ns ÷ 20ns = 17.5 → 18 (四捨五入)
+localparam T0L_TCK = 40;  // 800ns ÷ 20ns = 40.0 → 40
+localparam T1H_TCK = 35;  // 700ns ÷ 20ns = 35.0 → 35  
+localparam T1L_TCK = 30;  // 600ns ÷ 20ns = 30.0 → 30
+localparam RST_TCK = 2500; // 50us ÷ 20ns = 2500
 
 typedef enum logic [2:0] {
   IDLE,

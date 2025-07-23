@@ -1,0 +1,15 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5A-25A" pn="GW5A-LV25MG121NC1/I0">gw5a25a-002</Device>
+    <FileList>
+        <File path="/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/src/double_buffer.sv" type="file.verilog" enable="1"/>
+        <File path="/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/src/neopixel.sv" type="file.verilog" enable="1"/>
+        <File path="/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/src/spi_slave.sv" type="file.verilog" enable="1"/>
+        <File path="/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/src/top.sv" type="file.verilog" enable="1"/>
+        <File path="src/gowin_spi-led.cst" type="file.cst" enable="1"/>
+        <File path="src/gowin_spi-led.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

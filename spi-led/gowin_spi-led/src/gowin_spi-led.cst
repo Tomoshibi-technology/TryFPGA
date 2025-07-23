@@ -1,0 +1,43 @@
+//Copyright (C)2014-2025 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//Tool Version: V1.9.11.01 Education
+//Part Number: GW5A-LV25MG121NC1/I0
+//Device: GW5A-25
+//Device Version: A
+//Created Time: Thu 07 24 02:16:44 2025
+
+IO_LOC "o_debug_mosi" K1;
+IO_PORT "o_debug_mosi" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_cs" J4;
+IO_PORT "o_debug_cs" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_sclk" L2;
+IO_PORT "o_debug_sclk" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[7]" J11;
+IO_PORT "o_debug_led[7]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[6]" F7;
+IO_PORT "o_debug_led[6]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[5]" J8;
+IO_PORT "o_debug_led[5]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[4]" L9;
+IO_PORT "o_debug_led[4]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[3]" L10;
+IO_PORT "o_debug_led[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[2]" L7;
+IO_PORT "o_debug_led[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[1]" K7;
+IO_PORT "o_debug_led[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_debug_led[0]" H1;
+IO_PORT "o_debug_led[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_neopixel_out" G5;
+IO_PORT "o_neopixel_out" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "i_mosi" J5;
+IO_PORT "i_mosi" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+IO_LOC "i_cs" G8;
+IO_PORT "i_cs" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+IO_LOC "i_sclk" H7;
+IO_PORT "i_sclk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+IO_LOC "i_rst_n" H11;
+IO_PORT "i_rst_n" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+IO_LOC "i_clk50m" E2;
+IO_PORT "i_clk50m" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;

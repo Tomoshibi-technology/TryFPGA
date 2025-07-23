@@ -7,8 +7,8 @@ GTKWAVE  := gtkwave
 SRC_DIR  := src
 TOP_TB   := sim/tb_top.v
 NEOPIXEL_TB := sim/tb_neopixel.v
-SIM_SRCS := $(TOP_TB) $(wildcard $(SRC_DIR)/*.v)
-NEOPIXEL_SRCS := $(NEOPIXEL_TB) $(SRC_DIR)/neopixel.v
+SIM_SRCS := $(TOP_TB) $(wildcard $(SRC_DIR)/*.v) $(wildcard $(SRC_DIR)/*.sv)
+NEOPIXEL_SRCS := $(NEOPIXEL_TB) $(SRC_DIR)/neopixel.sv
 
 TEMP_DIR := tmp
 SIM_OUT  := $(TEMP_DIR)/sim.out
