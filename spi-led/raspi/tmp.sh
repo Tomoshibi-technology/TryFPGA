@@ -1,0 +1,1 @@
+gcc -o $(dirname "$0")/spi-led $(dirname "$0")/spi-led.c
