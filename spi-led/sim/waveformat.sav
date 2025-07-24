@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Thu Jul 24 11:17:32 2025
+[*] Thu Jul 24 14:03:00 2025
 [*]
 [dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/tmp/wave.vcd"
-[dumpfile_mtime] "Thu Jul 24 11:14:21 2025"
-[dumpfile_size] 3712035
+[dumpfile_mtime] "Thu Jul 24 14:02:54 2025"
+[dumpfile_size] 3268241
 [savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/sim/waveformat.sav"
-[timestart] 34320000
+[timestart] 0
 [size] 1800 1097
-[pos] 854 1764
-*-23.000000 74753500 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[pos] 854 1768
+*-26.000000 131110000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [markername] AA
 [markername] BB
 [markername] CC
@@ -51,20 +51,14 @@ tb_top.dut.i_cs
 tb_top.dut.i_mosi
 tb_top.dut.i_rst_n
 tb_top.dut.i_sclk
-@29
 tb_top.dut.o_neopixel_out
-@22
-tb_top.dut.r_index[6:0]
-@28
 tb_top.dut.r_spi_state[2:0]
 tb_top.dut.r_frame_valid[2:0]
 tb_top.dut.w_data_valid
 @22
 tb_top.dut.w_debug_state[7:0]
-tb_top.dut.w_neopixel_addr[6:0]
 tb_top.dut.w_neopixel_data[7:0]
 tb_top.dut.w_rx_data[7:0]
-tb_top.dut.w_write_addr[6:0]
 tb_top.dut.w_write_data[7:0]
 @28
 tb_top.dut.w_write_en
@@ -79,13 +73,10 @@ tb_top.dut.my_double_buffer.i_rst_n
 tb_top.dut.my_double_buffer.i_swap
 tb_top.dut.my_double_buffer.r_buf_sel
 @22
-tb_top.dut.my_double_buffer.i_rd_addr[6:0]
 tb_top.dut.my_double_buffer.o_rd_data[7:0]
-tb_top.dut.my_double_buffer.r_rd_data_q[7:0]
 @200
 -
 @22
-tb_top.dut.my_double_buffer.i_wr_addr[6:0]
 tb_top.dut.my_double_buffer.i_wr_data[7:0]
 @28
 tb_top.dut.my_double_buffer.i_wr_en
@@ -95,7 +86,6 @@ tb_top.dut.my_double_buffer.i_wr_en
 @28
 tb_top.dut.my_neopixel.i_clk
 @22
-tb_top.dut.my_neopixel.o_rd_addr[6:0]
 tb_top.dut.my_neopixel.i_data[7:0]
 tb_top.dut.my_neopixel.r_shift[7:0]
 @28
@@ -109,7 +99,6 @@ tb_top.dut.my_neopixel.o_frame_done
 tb_top.dut.my_neopixel.o_neopixel_out
 tb_top.dut.my_neopixel.r_bit_cnt[2:0]
 @22
-tb_top.dut.my_neopixel.r_byte_cnt[6:0]
 tb_top.dut.my_neopixel.r_clk_cnt[15:0]
 @28
 tb_top.dut.my_neopixel.r_state[2:0]

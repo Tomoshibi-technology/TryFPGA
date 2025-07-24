@@ -9,7 +9,7 @@ module top (
   input wire i_mosi,
   // output wire o_miso,
 
-  output wire o_neopixel_out,
+  output wire [5:0] o_neopixel_out,
 
   output wire [7:0] o_debug_led,
   output wire o_debug_sclk,
@@ -17,11 +17,20 @@ module top (
   output wire o_debug_mosi
 ); 
 
-  localparam LEDS = 30;
-  localparam ADDR_WIDTH = $clog2(LEDS*3);
+  // localparam LEDS = 400;
+  // localparam ADDR_WIDTH = $clog2(LEDS*3);
 
-  // assign o_debug_led[7:0] = w_rx_data[7:0]; // Display received data on LEDs
-  assign o_debug_led[7:0] = w_debug_state[7:0];
+  localparam CH_NUM = 6;
+  localparam LEDS_PER_CH = 200;
+  localparam BYTES_PER_CH = LEDS_PER_CH * 3;
+  localparam LEDS_TOTAL = CH_NUM * LEDS_PER_CH;
+  localparam BYTES_TOTAL = LEDS_TOTAL * 3;
+
+  localparam ADDR_W_TOTAL = $clog2(BYTES_TOTAL);
+  localparam ADDR_W_CH = $clog2(BYTES_PER_CH);
+
+
+  // assign o_debug_led[7:0] = w_debug_state[7:0];
   assign o_debug_sclk = i_sclk;
   assign o_debug_cs = i_cs;
   assign o_debug_mosi = i_mosi;
@@ -46,27 +55,33 @@ module top (
   } spi_state_t;
 
   spi_state_t r_spi_state = IDLE;
-  reg [ADDR_WIDTH-1:0] r_index = 0;
-  // reg [7:0] r_data_bridge = 0;
-  reg [2:0] r_frame_valid = 0;
-  // reg r_frame_valid = 0;
+  reg [ADDR_W_TOTAL-1:0] r_index = 0;
+  reg [2:0] r_frame_valid = 3'b000;
 
   wire [7:0] w_rx_data;
   wire w_data_valid;
 
-  //data_valid を2クロック分出すようにしないとダメな気がする
+  spi_slave my_spi(
+    .i_clk(i_clk50m),
+    .i_rst_n(i_rst_n),
+
+    .o_rx_data(w_rx_data),
+    .o_data_valid(w_data_valid),
+
+    .i_sclk(i_sclk),
+    .i_cs(i_cs),
+    .i_mosi(i_mosi)
+  );
 
   always @(posedge i_clk50m) begin
     if(!i_rst_n) begin
       r_spi_state <= IDLE;
       r_index <= 0;
-      // r_data_bridge <= 0;
       r_frame_valid <= 0;
     end else begin
       r_frame_valid <= {r_frame_valid[1:0], 1'b0};
       case(r_spi_state)
         IDLE: begin
-          // r_frame_valid <= 0; // フレーム有効フラグをリセット
           if(w_data_valid && w_rx_data == 8'h55) begin
             r_spi_state <= START;
             r_index <= 0;
@@ -85,25 +100,22 @@ module top (
         end
         DATA_R: begin
           if(w_data_valid) begin
-            // r_data_bridge <= w_rx_data;
             r_spi_state <= DATA_W;
           end
         end
         DATA_W: begin
           //このstateになると自動でw_write_enが1になっている。
-          if(r_index < LEDS*3) begin
-            r_index <= (r_index + 1) & {ADDR_WIDTH{1'b1}};
+          if(r_index < BYTES_TOTAL) begin
+            r_index <= (r_index + 1'b1) & {ADDR_W_TOTAL{1'b1}};
             r_spi_state <= DATA_R; // 次のデータを受信する
           end else begin
             r_spi_state <= STOP; // LEDS*3バイト受信完了
           end
         end
         STOP: begin
-          // if(w_data_valid == 1) begin
             if(w_rx_data == 8'hAA) begin
               r_spi_state <= IDLE; // ストップバイトを受信してリセット
               r_frame_valid <= {r_frame_valid[1:0], 1'b1}; // フレーム完了
-              // r_frame_valid <= 1'b1;
             end else begin
               r_spi_state <= IDLE; // ストップバイトが受信されなかった場合
             end
@@ -112,61 +124,70 @@ module top (
       endcase
     end
   end
-
   wire w_write_en = (r_spi_state == DATA_W);
-  wire [ADDR_WIDTH-1:0] w_write_addr = r_index;
-  // wire [7:0] w_write_data = r_data_bridge;
-  wire [7:0] w_write_data = w_rx_data;
+  wire [7:0] w_write_data = w_rx_data; 
 
-  spi_slave my_spi(
-    .i_clk(i_clk50m),
-    .i_rst_n(i_rst_n),
+  wire [CH_NUM-1:0] w_neopixel_out_bus;
+  wire [7:0]        w_debug_state_bus [CH_NUM-1:0];
 
-    .o_rx_data(w_rx_data),
-    .o_data_valid(w_data_valid),
+  genvar ch;
+  generate
+    for (ch = 0; ch < CH_NUM; ch++) begin : g_ch
+      /* 書き込みイネーブル & アドレス（600 byte 区切りで判定） */
+      localparam int OFFSET = ch * BYTES_PER_CH;   // 0,600,1200...
 
-    .i_sclk(i_sclk),
-    .i_cs(i_cs),
-    .i_mosi(i_mosi)
-  );
+      wire wr_en_local  = w_write_en &&
+                          (r_index >= OFFSET) &&
+                          (r_index <  OFFSET + BYTES_PER_CH);
 
-  wire w_neopixel_start;
-  wire [ADDR_WIDTH-1:0] w_neopixel_addr;
-  wire [7:0] w_neopixel_data;
+      wire [ADDR_W_CH-1:0] wr_addr_local = r_index[ADDR_W_TOTAL-1:0] - OFFSET;
 
-  double_buffer #(
-    .LEDS(LEDS),
-    .ADDR_WIDTH(ADDR_WIDTH)
-  ) my_double_buffer (
-    .i_clk(i_clk50m),
-    .i_rst_n(i_rst_n),
+      /* ダブルバッファ（1ch 分）---------------------------------- */
+      wire [ADDR_W_CH-1:0] rd_addr_local;
+      wire [7:0]           rd_data_local;
 
-    .i_wr_en(r_spi_state == DATA_W),
-    .i_wr_addr(r_index),
-    .i_wr_data(w_write_data),
-    .i_swap(r_frame_valid[0]),
+      double_buffer #(
+          .LEDS       (LEDS_PER_CH),
+          .ADDR_WIDTH (ADDR_W_CH)
+      ) u_buf (
+          .i_clk   (i_clk50m),
+          .i_rst_n (i_rst_n),
+          .i_wr_en (wr_en_local),
+          .i_wr_addr(wr_addr_local),
+          .i_wr_data(w_write_data),
+          .i_swap  (r_frame_valid[0]),   // 全 ch 同期スワップ
+          .i_rd_addr(rd_addr_local),
+          .o_rd_data(rd_data_local)
+      );
 
-    .i_rd_addr(w_neopixel_addr),
-    .o_rd_data(w_neopixel_data)
-    // .o_read_frame_valid(w_neopixel_start)
-  );
+      /* NeoPixel ドライバ（1ch 分）------------------------------ */
+      wire neopix_out_local;
+      wire [7:0] debug_state_local;
 
-  // LED制御
-  neopixel_driver #(
-    .LEDS(LEDS)
-  ) my_neopixel (
-    .i_clk(i_clk50m),
-    .i_rst_n(i_rst_n),
-    .i_start(r_frame_valid[2]), // フレーム有効信号
-    .i_data(w_neopixel_data), // 書き込みデータ
-    .o_rd_addr(w_neopixel_addr), // 読み出しアドレス
-    .o_neopixel_out(o_neopixel_out),
-    .o_busy(),
-    .o_frame_done(), // フレーム完了信号は使用しない
-    .o_debug_state(w_debug_state) // デバッグ用状態出力
-  );
+      neopixel_driver #(
+          .LEDS (LEDS_PER_CH)
+      ) u_drv (
+          .i_clk   (i_clk50m),
+          .i_rst_n (i_rst_n),
+          .i_start (r_frame_valid[2]),   // 全 ch 同期開始
+          .i_data  (rd_data_local),
+          .o_rd_addr(rd_addr_local),
+          .o_neopixel_out(neopix_out_local),
+          .o_busy (),
+          .o_frame_done(),
+          .o_debug_state(debug_state_local)
+      );
 
-  wire [7:0] w_debug_state;
+      /* バスに束ねる */
+      assign w_neopixel_out_bus[ch]   = neopix_out_local;
+      assign w_debug_state_bus[ch]    = debug_state_local;
+    end
+  endgenerate
+
+  assign o_neopixel_out = w_neopixel_out_bus;    // 6本
+  assign o_debug_led = w_debug_state_bus[0][7:0];
+
+
 
 endmodule
 

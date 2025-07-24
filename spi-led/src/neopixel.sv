@@ -57,6 +57,7 @@ localparam RST_TCK = 2500; // 50us ÷ 20ns = 2500
 typedef enum logic [2:0] {
   IDLE,
   LOAD,
+  LOAD2,
   HI,
   LO,
   RST
@@ -92,7 +93,9 @@ always @(posedge i_clk)begin
           o_frame_done <= 1'b0;
         end
       end
-      LOAD: begin
+      LOAD: 
+        r_state <= LOAD2;
+      LOAD2: begin
         r_state <= HI;
         o_neopixel_out <= 1'b1;
 

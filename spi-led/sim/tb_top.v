@@ -67,7 +67,7 @@ module tb_top;
         send_rgb(125, 0, 255);   // LED 2: 青
         
         // 残りのLEDは消灯
-        for (j = 3; j < 30; j = j + 1) begin
+        for (j = 3; j < 1200; j = j + 1) begin
             send_rgb(55, 0, 0);
         end
         
@@ -84,7 +84,7 @@ module tb_top;
         spi_send_byte(8'h5B);
                 
         for (j = 0; j < 30; j = j + 1) begin
-            send_rgb(8'hff, 8'hff, 8'hff); // 全LEDを赤に点灯
+            send_rgb(8'h77, 8'h00, 8'h11); // 全LEDを赤に点灯
         end
         
         spi_send_byte(8'hAA);  // ストップバイト

@@ -5,7 +5,7 @@
 //Part Number: GW5A-LV25MG121NC1/I0
 //Device: GW5A-25
 //Device Version: A
-//Created Time: Thu 07 24 02:16:44 2025
+//Created Time: Thu 07 24 23:42:00 2025
 
 IO_LOC "o_debug_mosi" K1;
 IO_PORT "o_debug_mosi" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
@@ -29,8 +29,18 @@ IO_LOC "o_debug_led[1]" K7;
 IO_PORT "o_debug_led[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
 IO_LOC "o_debug_led[0]" H1;
 IO_PORT "o_debug_led[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
-IO_LOC "o_neopixel_out" G5;
-IO_PORT "o_neopixel_out" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_neopixel_out[5]" K11;
+IO_PORT "o_neopixel_out[5]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_neopixel_out[4]" E11;
+IO_PORT "o_neopixel_out[4]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_neopixel_out[3]" A11;
+IO_PORT "o_neopixel_out[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_neopixel_out[2]" L11;
+IO_PORT "o_neopixel_out[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_neopixel_out[1]" E10;
+IO_PORT "o_neopixel_out[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "o_neopixel_out[0]" A10;
+IO_PORT "o_neopixel_out[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
 IO_LOC "i_mosi" J5;
 IO_PORT "i_mosi" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
 IO_LOC "i_cs" G8;
