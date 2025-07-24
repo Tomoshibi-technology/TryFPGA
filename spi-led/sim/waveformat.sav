@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Thu Jul 24 14:03:00 2025
+[*] Thu Jul 24 15:53:28 2025
 [*]
 [dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/tmp/wave.vcd"
-[dumpfile_mtime] "Thu Jul 24 14:02:54 2025"
-[dumpfile_size] 3268241
+[dumpfile_mtime] "Thu Jul 24 15:53:21 2025"
+[dumpfile_size] 16888030
 [savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/sim/waveformat.sav"
-[timestart] 0
+[timestart] 2880000000
 [size] 1800 1097
 [pos] 854 1768
-*-26.000000 131110000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-21.000000 2883640000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [markername] AA
 [markername] BB
 [markername] CC
@@ -42,65 +42,48 @@
 [signals_width] 245
 [sst_expanded] 1
 [sst_vpaned_height] 356
-@420
-tb_top.dut.ADDR_WIDTH
-tb_top.dut.LEDS
 @28
 tb_top.dut.i_clk50m
 tb_top.dut.i_cs
 tb_top.dut.i_mosi
 tb_top.dut.i_rst_n
 tb_top.dut.i_sclk
-tb_top.dut.o_neopixel_out
 tb_top.dut.r_spi_state[2:0]
 tb_top.dut.r_frame_valid[2:0]
 tb_top.dut.w_data_valid
 @22
-tb_top.dut.w_debug_state[7:0]
-tb_top.dut.w_neopixel_data[7:0]
 tb_top.dut.w_rx_data[7:0]
 tb_top.dut.w_write_data[7:0]
 @28
 tb_top.dut.w_write_en
 @200
 -
-@420
-tb_top.dut.my_double_buffer.ADDR_WIDTH
-tb_top.dut.my_double_buffer.LEDS
-@28
-tb_top.dut.my_double_buffer.i_clk
-tb_top.dut.my_double_buffer.i_rst_n
-tb_top.dut.my_double_buffer.i_swap
-tb_top.dut.my_double_buffer.r_buf_sel
-@22
-tb_top.dut.my_double_buffer.o_rd_data[7:0]
-@200
--
-@22
-tb_top.dut.my_double_buffer.i_wr_data[7:0]
-@28
-tb_top.dut.my_double_buffer.i_wr_en
-@200
 -
 -
+-
+@800022
+tb_top.dut.o_neopixel_out[5:0]
 @28
-tb_top.dut.my_neopixel.i_clk
-@22
-tb_top.dut.my_neopixel.i_data[7:0]
-tb_top.dut.my_neopixel.r_shift[7:0]
-@28
-tb_top.dut.my_neopixel.i_rst_n
-tb_top.dut.my_neopixel.i_start
-tb_top.dut.my_neopixel.o_busy
-@22
-tb_top.dut.my_neopixel.o_debug_state[7:0]
-@28
-tb_top.dut.my_neopixel.o_frame_done
-tb_top.dut.my_neopixel.o_neopixel_out
-tb_top.dut.my_neopixel.r_bit_cnt[2:0]
-@22
-tb_top.dut.my_neopixel.r_clk_cnt[15:0]
-@28
-tb_top.dut.my_neopixel.r_state[2:0]
+(0)tb_top.dut.o_neopixel_out[5:0]
+(1)tb_top.dut.o_neopixel_out[5:0]
+(2)tb_top.dut.o_neopixel_out[5:0]
+(3)tb_top.dut.o_neopixel_out[5:0]
+(4)tb_top.dut.o_neopixel_out[5:0]
+(5)tb_top.dut.o_neopixel_out[5:0]
+@1001200
+-group_end
+@800023
+tb_top.dut.g_ch[0].debug_state_local[7:0]
+@29
+(0)tb_top.dut.g_ch[0].debug_state_local[7:0]
+(1)tb_top.dut.g_ch[0].debug_state_local[7:0]
+(2)tb_top.dut.g_ch[0].debug_state_local[7:0]
+(3)tb_top.dut.g_ch[0].debug_state_local[7:0]
+(4)tb_top.dut.g_ch[0].debug_state_local[7:0]
+(5)tb_top.dut.g_ch[0].debug_state_local[7:0]
+(6)tb_top.dut.g_ch[0].debug_state_local[7:0]
+(7)tb_top.dut.g_ch[0].debug_state_local[7:0]
+@1001201
+-group_end
 [pattern_trace] 1
 [pattern_trace] 0

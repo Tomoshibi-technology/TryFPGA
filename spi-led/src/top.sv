@@ -34,6 +34,7 @@ module top (
   assign o_debug_sclk = i_sclk;
   assign o_debug_cs = i_cs;
   assign o_debug_mosi = i_mosi;
+  assign o_debug_led[7:0] = {2'b00, w_neopixel_out_bus[5:0]};
 
   // spi controller
   /*
@@ -184,10 +185,7 @@ module top (
     end
   endgenerate
 
-  assign o_neopixel_out = w_neopixel_out_bus;    // 6本
-  assign o_debug_led = w_debug_state_bus[0][7:0];
-
-
+  assign o_neopixel_out = w_neopixel_out_bus;
 
 endmodule
 

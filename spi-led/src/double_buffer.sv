@@ -44,7 +44,7 @@ module double_buffer #(
   //     else r_bufB[i_wr_addr] <= i_wr_data;
   //   end
   // end
-   always_ff @(posedge i_clk) begin
+  always_ff @(posedge i_clk) begin
     if (i_wr_en && (r_buf_sel==0)) r_bufA[i_wr_addr] <= i_wr_data;
   end
   always_ff @(posedge i_clk) begin
