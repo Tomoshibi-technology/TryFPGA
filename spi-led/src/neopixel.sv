@@ -49,9 +49,9 @@ assign o_debug_state = r_clk_cnt[15:8]; // デバッグ用にクロックカウ�
 
 // 50MHz (20ns/clock) での計算済み値
 localparam T0H_TCK = 15;  // 220~380ns ÷ 20ns = 11~19
-localparam T0L_TCK = 35;  // 580~1000ns ÷ 20ns = 29~50
-localparam T1H_TCK = 25;  // 580ns ÷ 20ns = 29  
-localparam T1L_TCK = 25;  // 580ns ÷ 20ns = 29
+localparam T0L_TCK = 45;  // 580~1000ns ÷ 20ns = 29~50
+localparam T1H_TCK = 30;  // 580ns ÷ 20ns = 29  
+localparam T1L_TCK = 30;  // 580ns ÷ 20ns = 29
 localparam RST_TCK = 2500; // 50us ÷ 20ns = 2500
 
 typedef enum logic [2:0] {
