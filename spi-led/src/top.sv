@@ -17,7 +17,7 @@ module top (
   output wire o_debug_mosi
 ); 
 
-  localparam LEDS = 120;
+  localparam LEDS = 30;
   localparam ADDR_WIDTH = $clog2(LEDS*3);
 
   // assign o_debug_led[7:0] = w_rx_data[7:0]; // Display received data on LEDs
@@ -48,8 +48,8 @@ module top (
   spi_state_t r_spi_state = IDLE;
   reg [ADDR_WIDTH-1:0] r_index = 0;
   // reg [7:0] r_data_bridge = 0;
-  // reg [2:0] r_frame_valid = 0;
-  reg r_frame_valid = 0;
+  reg [2:0] r_frame_valid = 0;
+  // reg r_frame_valid = 0;
 
   wire [7:0] w_rx_data;
   wire w_data_valid;
@@ -63,10 +63,10 @@ module top (
       // r_data_bridge <= 0;
       r_frame_valid <= 0;
     end else begin
-      // r_frame_valid <= {r_frame_valid[1:0], 1'b0};
+      r_frame_valid <= {r_frame_valid[1:0], 1'b0};
       case(r_spi_state)
         IDLE: begin
-          r_frame_valid <= 0; // フレーム有効フラグをリセット
+          // r_frame_valid <= 0; // フレーム有効フラグをリセット
           if(w_data_valid && w_rx_data == 8'h55) begin
             r_spi_state <= START;
             r_index <= 0;
@@ -102,8 +102,8 @@ module top (
           // if(w_data_valid == 1) begin
             if(w_rx_data == 8'hAA) begin
               r_spi_state <= IDLE; // ストップバイトを受信してリセット
-              // r_frame_valid <= {r_frame_valid[1:0], 1'b1}; // フレーム完了
-              r_frame_valid <= 1'b1;
+              r_frame_valid <= {r_frame_valid[1:0], 1'b1}; // フレーム完了
+              // r_frame_valid <= 1'b1;
             end else begin
               r_spi_state <= IDLE; // ストップバイトが受信されなかった場合
             end
@@ -144,11 +144,11 @@ module top (
     .i_wr_en(r_spi_state == DATA_W),
     .i_wr_addr(r_index),
     .i_wr_data(w_write_data),
-    .i_write_frame_done(r_frame_valid), // 1じゃなくて2にしても良い。
+    .i_swap(r_frame_valid[0]),
 
     .i_rd_addr(w_neopixel_addr),
-    .o_rd_data(w_neopixel_data),
-    .o_read_frame_valid(w_neopixel_start)
+    .o_rd_data(w_neopixel_data)
+    // .o_read_frame_valid(w_neopixel_start)
   );
 
   // LED制御
@@ -157,7 +157,7 @@ module top (
   ) my_neopixel (
     .i_clk(i_clk50m),
     .i_rst_n(i_rst_n),
-    .i_start(w_neopixel_start), // フレーム有効信号
+    .i_start(r_frame_valid[2]), // フレーム有効信号
     .i_data(w_neopixel_data), // 書き込みデータ
     .o_rd_addr(w_neopixel_addr), // 読み出しアドレス
     .o_neopixel_out(o_neopixel_out),
