@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Thu Jul 24 15:53:28 2025
+[*] Sat Jul 26 12:53:33 2025
 [*]
 [dumpfile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/tmp/wave.vcd"
-[dumpfile_mtime] "Thu Jul 24 15:53:21 2025"
-[dumpfile_size] 16888030
+[dumpfile_mtime] "Sat Jul 26 02:36:16 2025"
+[dumpfile_size] 16981145
 [savefile] "/Users/jumpei/Documents/GitHub/TryFPGA/spi-led/sim/waveformat.sav"
-[timestart] 2880000000
-[size] 1800 1097
-[pos] 854 1768
-*-21.000000 2883640000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[timestart] 2818960000
+[size] 1728 1185
+[pos] 298 269
+*-24.000000 2896000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [markername] AA
 [markername] BB
 [markername] CC
@@ -38,10 +38,11 @@
 [markername] ZZ
 [treeopen] tb_top.
 [treeopen] tb_top.dut.
+[treeopen] tb_top.dut.g_ch[0].
 [sst_width] 255
 [signals_width] 245
 [sst_expanded] 1
-[sst_vpaned_height] 356
+[sst_vpaned_height] 393
 @28
 tb_top.dut.i_clk50m
 tb_top.dut.i_cs
@@ -59,6 +60,9 @@ tb_top.dut.w_write_en
 @200
 -
 -
+@28
+tb_top.dut.g_ch[0].u_buf.r_buf_sel
+@200
 -
 -
 @800022
@@ -72,9 +76,9 @@ tb_top.dut.o_neopixel_out[5:0]
 (5)tb_top.dut.o_neopixel_out[5:0]
 @1001200
 -group_end
-@800023
+@800022
 tb_top.dut.g_ch[0].debug_state_local[7:0]
-@29
+@28
 (0)tb_top.dut.g_ch[0].debug_state_local[7:0]
 (1)tb_top.dut.g_ch[0].debug_state_local[7:0]
 (2)tb_top.dut.g_ch[0].debug_state_local[7:0]
@@ -83,7 +87,7 @@ tb_top.dut.g_ch[0].debug_state_local[7:0]
 (5)tb_top.dut.g_ch[0].debug_state_local[7:0]
 (6)tb_top.dut.g_ch[0].debug_state_local[7:0]
 (7)tb_top.dut.g_ch[0].debug_state_local[7:0]
-@1001201
+@1001200
 -group_end
 [pattern_trace] 1
 [pattern_trace] 0

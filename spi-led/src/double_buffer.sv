@@ -55,7 +55,7 @@ module double_buffer #(
   logic [7:0] rdA, rdB;
   always_ff @(posedge i_clk) rdA <= r_bufA[i_rd_addr];
   always_ff @(posedge i_clk) rdB <= r_bufB[i_rd_addr];
-  assign o_rd_data = (r_buf_sel==0) ? rdB : rdA;
+  assign o_rd_data = (r_buf_sel==0) ? rdB : rdA; // 1にするとダブルバッファを無効化できる。
 
   // 切り替え
   always_ff @(posedge i_clk)begin
