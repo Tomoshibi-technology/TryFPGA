@@ -1,0 +1,36 @@
+
+// reference: https://qiita.com/h_d/items/7d4e58af1a8861ec5546
+
+{
+    "latex-workshop.latex.recipes": [ 
+        {
+            "name": "lualatex",
+            "tools": [
+                "lualatex-tool",
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex-tool",
+            "command": "lualatex",
+            "args": [
+                "--cmdx",
+                "-file-line-error",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    ],
+    "latex-workshop.latex.outDir": "output",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+
+    "[latex]": {
+        "editor.wordWrap": "on", // 右端で折り返す
+        "files.autoSave": "off" // 自動保存をオフ
+    },
+}
