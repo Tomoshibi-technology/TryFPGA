@@ -4,9 +4,18 @@
 {
     "latex-workshop.latex.recipes": [ 
         {
-            "name": "lualatex",
+            "name": "lualatex with biber",
             "tools": [
                 "lualatex-tool",
+                "biber-tool",
+                "lualatex-tool",
+                "lualatex-tool"
+            ]
+        },
+        {
+            "name": "lualatex only",
+            "tools": [
+                "lualatex-tool"
             ]
         }
     ],
@@ -25,6 +34,15 @@
             ],
             "env": {}
         },
+        {
+            "name": "biber-tool",
+            "command": "biber",
+            "args": [
+                "--output_directory=%OUTDIR%",
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
     ],
     "latex-workshop.latex.outDir": "output",
     "latex-workshop.latex.autoBuild.run": "onSave",

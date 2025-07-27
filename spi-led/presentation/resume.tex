@@ -5,7 +5,8 @@
 \usepackage{graphicx} % 画像を挿入するためのパッケージ
 \usepackage{url} % URLを表示するためのパッケージ
 \usepackage{fix-cm} % Computer Modernフォントの任意サイズ対応
-
+\usepackage[backend=biber,style=numeric-comp,sorting=none]{biblatex} % [1]形式の引用スタイル
+\addbibresource{references.bib} % 参考文献ファイルを指定
 
 \usepackage[top=15mm, left=25mm, right=25mm, bottom=25mm]{geometry}
 
@@ -28,6 +29,10 @@
 
 \section*{はじめに}
 
+引用の例：
+FPGAを用いたLEDマトリクス制御に関する研究\cite{xilinx2023}では...あああ
+SPIプロトコルの実装\cite{intel2023, altera2022}について述べられている。
 
+\printbibliography[title=参考文献]
 
 \end{document}
